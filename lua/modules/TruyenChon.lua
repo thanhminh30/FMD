@@ -35,7 +35,7 @@ function getpagenumber()
   task.pagelinks.clear()
   if http.get(MaybeFillHost(module.rooturl, url)) then
     local x=TXQuery.Create(http.Document)
-    x.xpathstringall('//div[@class="page-chapter"]/img/@data-original', task.pagelinks)
+    x.xpathstringall('//div[@class="page-chapter"]/img/@data-cdn', task.pagelinks)
   else
     return false
   end
